@@ -7,17 +7,7 @@ const port = process.env.PORT || 5000;
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
 // middleware
-app.use(cors(
-    {
-        origin: [
-            'http://localhost:5173/dashboard/addReviews',
-            'https://swipe-defend.web.app/dashboard/addReviews',
-            'https://swipe-defend.firebaseapp.com/dashboard/addReviews',
-            'https://swipe-defend.vercel.appdashboard/addReviews'
-        ],
-        credentials: true
-    }
-));
+app.use(cors());
 app.use(express.json());
 
 const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
